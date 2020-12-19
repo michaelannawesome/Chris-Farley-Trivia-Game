@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chris Farley Quiz</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
+      <button id="reset">Okey-Dokey (restart)</button>
+    </header>
+    <main>
+      <div id="start" class="startNext">
+        <button id="beginBut" class="beginButton button">Da Start</button>
+        <button id="nextBut" class="nextButton button">Da Next</button>
+      </div>
+      <div id="triviaBox" style="display: none;">
+          <div id="quest"><h3>Question</h3></div>
+        </div>
+
+        <div id="choicesBut" class="buttonBox">
+          <button class="button">
+            <h4 id="choiceA" onclick="validate(A)"></h4>
+          </button>
+          <button class="button">
+            <h4 id="choiceB" onclick="validate(B)"></h4>
+          </button>
+          <button class="button">
+            <h4 id="choiceC" onclick="validate(C)"></h4>
+          </button>
+          <button class="button">
+            <h4 id="choiceD" onclick="validate(D)"></h4>
+          </button>
+        </div>
+        <div id="score" style= "display: none;"</div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
