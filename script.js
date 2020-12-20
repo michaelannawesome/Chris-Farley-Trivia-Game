@@ -1,176 +1,141 @@
+//grabbing all elements
 
+let ul = document.getElementById('ul')
+let nextButton = document.getElementById('nextBut');
+let quesBox = document.getElementById('questionBox')
+let a = document.getElementById('a')
+let b = document.getElementById('b')
+let c = document.getElementById('c')
+let d = document.getElementById('d')
 
-const resetButton = document.querySelector("#reset");
-const startButton = document.querySelector("#beginBut");
-const triviaBox = document.querySelector(".questionBox");
-
-const ansA = document.getElementById('#choiceA');
-const ansB = document.getElementById('#choiceB');
-const ansC = document.getElementById('#choiceC');
-const ansD = document.getElementById('#choiceD');
-
-startButton.addEventListener("click", beginGame)
-function beginGame(){
-  startButton.style.display ='none';
-  getQuest();
-  triviaBox.style.display= "block";
-}
-
-
-
-resetButton.addEventListener("click", function() {
-  alert("Okey Dokey!");
-});
-
-// startButton.addEventListener("click", startTrivia() {
-//   alert("game started!");
-// });
-
-
-
-let questions = [
-  { question: "Finish this quote: “Brothers don’t shake hands. Brothers _____",
-    choiceA: "gotta dance.",
-    choiceB: "gotta kiss.",
-    choiceC: "gotta hug.",
-    choiceD: "gotta take DNA tests.",
-    correct: "C"
-
-  },
-  { question: "How many movies did Chris Farley make with David Spade?",
-    choiceA: "One",
-    choiceB: "Two",
-    choiceC: "Four",
-    choiceD: "Five",
-    correct: "B"
-
-  },
-  { question: "Chris Farley had a cameo in all of these movies EXCEPT:",
-    choiceA: "Austin Powers",
-    choiceB: "Wayne's World",
-    choiceC: "Billy Madison",
-    choiceD: "Coneheads",
-    correct: "A"
-
-  },
-  { question: "Chris Farley’s famous Bear’s fan character, Bill Swerski, has had how many heart attacks?",
-    choiceA: "Six",
-    choiceB: "Too many to count",
-    choiceC: "A baker’s dozen",
-    choiceD: "It’s not a heart attack, just a minor blockage",
-    correct: "C"
-
-  },
-  { question: "Finish this quote: “I am 35 years old, thrice divorced, and_______",
-    choiceA: "I sell sandwiches to tourists.",
-    choiceB: "I live in a van down by the river!",
-    choiceC: "lay off, I’m starving!",
-    choiceD: "my diet starts Monday!",
-    correct: "B"
-
-  },
-  { question: "Who did all of Chris Farley’s stunts?",
-    choiceA: "Himself",
-    choiceB: "David Spade",
-    choiceC: "His look-a-like brother, Kevin Farley",
-    choiceD: "Kansas City Chiefs' quarterback Joe Montana",
-    correct: "A"
-
-  },
-  { question: "What rock band wrote the song \'Purple Stain\' with the lyric \'Farley is an angel and I can prove this\', as a tribute?",
-    choiceA: "Red Hot Chili Peppers",
-    choiceB: "Blink 182",
-    choiceC: "Bush",
-    choiceD: "Sublime",
-    correct: "A"
-
-  },
-  { question: "What tv show based on a popular book series was shelved permanently as the author only wanted Chris to play the lead?",
-    choiceA: "Goosebumps",
-    choiceB: "Wayside Stories",
-    choiceC: "Holes",
-    choiceD: "Captain Underpants",
-    correct: "D"
-
-  },
-  { question: "What profession did Chris claim when approaching women?",
-    choiceA: "Hypnotherapist",
-    choiceB: "Brake pad salesman",
-    choiceC: "Dentist",
-    choiceD: "Aerobics Instructor",
-    correct: "D"
-
-  },
-  { question: "What was Chris Farley’s dream bio pic role?",
-    choiceA: "John Belushi",
-    choiceB: "Newt Gingrich",
-    choiceC: "Roscoe 'Fatty' Arbuckle",
-    choiceD: "Oliver Hardy (Laurel & Hardy)",
-    correct: "C"
-
-  },
-];
-
-
-let lastTrivia = questions.length-1;
-let currentQuest = 0;
-
-function getQuest (){
-  let q = questions[currentQuest];
-  quest.innerHTML = "<h3>" + q.questions + "</h3>";
-  choiceA.innerHTML = q.choiceA;
-  choiceB.innerHTML = q.choiceB;
-  choiceC.innerHTML = q.choiceC;
-  choiceD.innerHTML = q.choiceD;
-}
-getQuest() 
-currentQuest++
- getQuest();
-
- function validateAns (answer) {
-   if (questions[currentQuest].correct===answer){
-     score++;
-     answerRight();
-   }else {
-     answerWrong();
-   }
-  //  if(currentQuest < lastTrivia) {
-  //    count = 0;
-     currentQuest++;
-   }
-   }
-
-   }
- }
-// let num = questions.length -1
-// console.log(num)
-
-// const questionBox = document.querySelector("#questionBox")
-
-// // insert innerHTML
-// questionBox.innerHTML = `Question: ${questions[num].question}`
+//Questions Array
+const arr = {
+        questions:[
+            {
+                q:"Finish this quote: “Brothers don’t shake hands. Brothers _____",
+                choices: ["gotta dance.","gotta kiss.","gotta hug.","gotta take DNA tests."],
+                answer:3
+            },
+            {
+                q:"How many movies did Chris Farley make with David Spade?",
+                choices: ['One','Two', 'Four', "Five"],
+                answer:2
+            },    
+            {
+                q:"Chris Farley had a cameo in all of these movies EXCEPT:",
+                choices: ["Austin Powers", "Wayne’s World", "Billy Madison", "Coneheads"],
+                answer:1
+            },
+            {
+                q:"Chris Farley’s famous Bear’s fan character, Bill Swerski, has had how many heart attacks?",
+                choices: ['Six',"Too many to count", "A baker’s dozen", "It’s not a heart attack, just a minor blockage"],
+                answer:3
+            },   
+            {
+                q:"Finish this quote: I am 35 years old, thrice divorced, and_______",
+                choices: ["I sell sandwiches to tourists.", "I live in a van down by the river!", "lay off, I’m starving!", "my diet starts Monday!"],
+                answer:2
+            },
+            {
+                q:"Who did all of Chris Farley’s stunts?",
+                choices: ["Himself","David Spade", "His look-a-like brother, Kevin Farley", "Kansas City Chiefs' quarterback Joe Montana"],
+                answer:1
+            },    
+            {
+                q:"What rock band wrote the song \'Purple Stain\' with the lyric \'Farley is an angel and I can prove this\', as a tribute?",
+                choices: ["Red Hot Chili Peppers", "Blink 182", "Bush", "Sublime"],
+                answer:1
+            },
+            {
+                q:"What tv show based on a popular book series was shelved permanently as the author only wanted Chris to play the lead?",
+                choices: ["Goosebumps","Wayside Stories", "Holes", "Captain Underpants"],
+                answer:4
+            },    
+            {
+                q:"What profession did Chris claim when approaching women?",
+                choices: ["Hypnotherapist", "Brake pad salesman","Dentist", "Aerobics Instructor"],
+                answer:4
+            },
+            {
+                q:"What was Chris Farley’s dream bio pic role?",
+                choices: ["John Belushi","Newt Gingrich", "Roscoe 'Fatty' Arbuckle",  "Oliver Hardy (Laurel & Hardy)"],
+                answer:3
+            }             
+        ],
     
-// const choiceA = document.querySelector('#choiceA');
-// choiceA.innerHTML = `A. ${questions[num].choiceA}`
+        
+        index:0,
+        load:function(){
+            if(this.index<=this.questions.length-1){
+                quesBox.innerHTML=this.index+1 + ". " +this.questions[this.index].q;
+                a.innerHTML=this.questions[this.index].choices[0];
+                b.innerHTML=this.questions[this.index].choices[1];
+                c.innerHTML=this.questions[this.index].choices[2];
+                d.innerHTML=this.questions[this.index].choices[3];
+            }
+            else {
+                quesBox.innerHTML="Your Brain has a shell on it!";
+                ul.style.display="none";
+                nextButton.style.display="none";
+            }
+        },
+        
+// let lastTrivia = questions.length-1;
+// let currentQuest = 0;
+// let score = 0;
 
-// const choiceB = document.querySelector('#choiceB');
-// choiceB.innerHTML = `B. ${questions[num].choiceB}`
 
-// const choiceC = document.querySelector('#choiceC');
-// choiceC.innerHTML = `C. ${questions[num].choiceC}`
-
-// const choiceD = document.querySelector('#choiceD');
-// choiceD.innerHTML = `D. ${questions[num].choiceD}`
-
-
-// function startTrivia () {
-
+// //create function that will run the questions
+// function getQuest (){
+//   let q = questions[currentQuest];
+//   //gets qustion from Array and displays it in h3
+//   quest.innerHTML = "<h3>" + q.question + "</h3>";
+//   choiceA.innerHTML = q.choiceA;
+//   choiceB.innerHTML = q.choiceB;
+//   choiceC.innerHTML = q.choiceC;
+//   choiceD.innerHTML = q.choiceD;
 // }
 
-// function nextQuestion() {
 
-// }
 
-// function answer (){
-  
-// }
+
+
+//  function validate(answer) {
+//    //check if answer is correct
+//    if (answer=== questions[currentQuest].correct){
+//      //if so, increase by 1
+//      score++;
+//      answerRight();
+//    }else {
+//      answerWrong();
+//    }
+//    if(currentQuest < lastTrivia) {
+ 
+//      currentQuest++;
+//      getQuest();
+//    } else {
+//      showScore()
+//    }
+//    }
+   
+
+//    function answerRight() {
+//      document.getElementById(currentQuest).style.img= url(Chris.jpg);
+//    }
+
+//    function answerWrong() {
+//     document.getElementById(currentQuest).style.img= url(ChrisWrong.jpg);
+//   }
+   
+ 
+
+//  const showScore = () => {
+//   score ++;
+//   console.log(score);
+//   document.querySelector("#score").innerText = score;
+//   scoreBox.style.display = "block";
+//   // if (score ===100) {
+//   //     const winner = document.querySelector('.level-winner')
+//   //     winner.style.opacity = 1 
+//   // }
+// };
