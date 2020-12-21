@@ -1,82 +1,121 @@
 body {
-    background-color: palegoldenrod;
+  background-color: palegoldenrod;
+  font-family: "Open Sans", sans-serif;
 }
 
 main {
-    /* background-image: url(ChrisBackground.jpg);
+  color: white;
+  /* background-image: url(ChrisBackground.jpg);
     height: 650px;
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;  */
-    /* margin: 50px; */
-    color: rgb(6, 58, 170); 
+  /* margin: 50px; */
+  /* color: rgb(6, 58, 170); 
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 
-    /* opacity: 0.9; */
-
+  /* opacity: 0.9; */
 }
 
-h1  {
-    color: black;
-    text-align: center;
-    font-size: 80px;
-    text-emphasis: bold ;
-    
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 80px;
+  text-emphasis: bold;
+  font-family: "Inconsolata", monospace;
 }
 
-#mainBox {
-    width: 600px;
-    height: 600px;
-    /* max-width: 80%; */
-    background-color: aliceblue;
-    border-radius: 5px;
-    opacity: 0.4;
-    /* padding: 10px; */
-    box-shadow: 0 0 10px 2px;
+* {
+  box-sizing: border-box;
 }
 
-.buttonBox {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
+.triviaBox {
+  height: 400px;
+  width: 600px;
+  background-image: url(ChrisWrong.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 30px auto;
+  border-radius: 8px;
+  padding: 25px;
 }
 
-.button {
-    /* border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 50%); */
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: white;
-    outline: none;
+.triviaBox .choices {
+  float: left;
+  width: 100%;
 }
 
-.button:hover {
-    border-color: black;
-  }
+.triviaBox .choices ul {
+  list-style: none;
+  padding: 0%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
-  /* .button.correct {
-    --hue: var(--hue-correct);
-    color: black;
-  }
-  
-  .button.wrong {
-    --hue: var(--hue-wrong);
-  } */
+.triviaBox .question {
+  min-height: 50px;
+  background-color: grey;
+  border-radius: 8px;
+  color: white;
+  padding: 15px;
+  float: left;
+  width: 100%;
+  font-size: 25px;
+  opacity: 0.8;
+}
 
-  #startBut {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-  }
+.triviaBox .choices ul li {
+  display: inline-block;
+  background-color: rgb(9, 171, 189);
+  width: 40%;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+}
 
-  .info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.triviaBox .choices ul li.correct {
+  background-color: green;
+}
 
-  .invisable {
-      display: none;
-  }
+.triviaBox .choices ul li.wrong {
+  background-color: red;
+}
+
+.triviaBox .score {
+  float: left;
+  width: 100%;
+}
+
+.triviaBox .score .scoreCounter {
+  width: 60%;
+  float: right;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.triviaBox .score .next {
+  width: 50%;
+  float: left;
+}
+
+.triviaBox .score .scoreCounter span {
+  background-color: rgb(45, 72, 184);
+  padding: 5px 20px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.triviaBox .score .next button {
+  padding: 10px 70px;
+  color: white;
+  background-color: orange;
+  border: none;
+  border-radius: 8px;
+}

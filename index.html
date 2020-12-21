@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" >
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Open+Sans:wght@600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
-      </header>
-      <main>
-        <img src="ChrisBackground.jpg" alt="Chris Farley" style="width:100%">
-    <div class="triviaBox">       
-        <div id="questionBox" class="question">
-            Question
-        </div>
-        <div class="answers">
-            <ul id="ul">
-                <li id="a" onclick="button(this)"></li>
-                <li id="b" onclick="button(this)"></li>
-                <li id="c" onclick="button(this)"></li>
-                <li id="d" onclick="button(this)"></li>
-            </ul>
+      <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
+    </header>
+    <main>
+      <img src="ChrisBackground.jpg" alt="Chris Farley" style="width: 100%" />
+      <div class="triviaBox">
+        <div id="questionBox" class="question">Question</div>
+
+        <div class="choices">
+          <ul id="ul">
+            <li id="a" onclick="button(this)"></li>
+            <li id="b" onclick="button(this)"></li>
+            <li id="c" onclick="button(this)"></li>
+            <li id="d" onclick="button(this)"></li>
+          </ul>
         </div>
         <div class="score">
-            <div class="next">
-                <button id="nextBut" type="button" onclick="next()">
-                  Next
-                </button>
-            </div>
-            <div class="score-card">
-                SCORE: <div id="scoreCard">0</div>
-            </div>
+          <div class="next">
+            <button id="nextBut" type="button" onclick="next()">Next</button>
+          </div>
+          <div class="scoreCounter">SCORE: <span id="pointsAmt">0</span></div>
         </div>
-    </div>
-      </main>
-  <script src="script.js"></script>   
-</body>
-</html> 
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
