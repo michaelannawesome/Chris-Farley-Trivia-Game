@@ -1,8 +1,10 @@
 body {
     
   font-family: 'Montserrat', sans-serif;
+  cursor: url(chrisCursor.png), auto;
   
 }
+
 
 html { 
   background: url(ChrisBackground.jpg) no-repeat center center fixed; 
@@ -20,7 +22,7 @@ html {
  }
 
 h1 {
-  font-size: 42px;
+  font-size: 50px;
   writing-mode: vertical-lr;
   text-orientation: upright;
   color: #bfff01;
@@ -33,13 +35,19 @@ h1 {
 
 
 
+.triviaBox .choices ul li:hover {
+  color: rgb(249, 248, 250);
+  box-shadow: 0 50px 200px rgba(145, 92, 182, .4);
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
 .triviaBox {
   height: 500px;
   width: 700px;
    margin: 30px auto;
   border-radius: 8px;
-  padding: 25px; 
-  
+  padding-top: 200px; 
  } 
 
 .triviaBox .choices {
@@ -69,20 +77,24 @@ h1 {
   opacity: 0.75;
   border: 3px solid rgb(61, 2, 100);
   text-shadow: 0px 0px 10px rebeccapurple;
+  position: relative;
+  left: -10px;
 }
 
-.triviaBox .choices ul li {
+.triviaBox .choices ul li{
   display: inline-block;
   background-color: #f72585;
-  width: 40%;
+  width: 30%;
   padding: 20px;
-  border-radius: 8px;
   margin-bottom: 10px;
   margin: 10px;
-  color: black;
-  cursor: pointer;
   border: 3px solid rgb(90, 1, 78);
   opacity: .9;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(145, 92, 182);
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 .triviaBox .choices ul li.correct {
@@ -102,19 +114,17 @@ h1 {
   width: 100%;
 }
 
-h3 {
-  text-decoration-line: underline;
-  text-decoration-style: wavy ;
-}
+
 
 .triviaBox .score .scoreCounter {
   width: 60%;
   float: right;
   line-height: 40px;
   font-size: 20px;
-  color: #bfff01 ;
+  color: black ;
   text-emphasis: bold;
-  text-shadow: 0px 0px 10px rgb(92, 141, 1);
+  text-shadow: 0px 0px 200px #bfff01;
+ 
   
 }
 
@@ -132,10 +142,18 @@ h3 {
 }
 
 .triviaBox .score .next button {
-  padding: 10px 70px;
+  padding: 10px 50px;
   color: rgb(54, 53, 52);
   text-shadow: 0px 0px 2px rgb(247, 210, 142);
   background-color: #4cc9f0;
   border: 2px solid rgb(2, 79, 82);
-  border-radius: 8px;
+  /* border-radius: 8px; */
+  cursor: url(chrisCursor\ copy.png), auto;
+  position: relative;
+  left: 10px;
+}
+
+.triviaBox .score .next button:hover{
+text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
 }
