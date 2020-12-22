@@ -80,7 +80,7 @@ var arr = {
       opt4.innerHTML= this.questions[this.index].choices[3];
     //when all questions have run, display this:
     } else {
-      quesBox.innerHTML="Your brain has a shell on it!"
+      quesBox.innerHTML="Remember when you played that game? That was awesome!"
       //stop displaying the questions and options
       ul.style.display= "none";
       //stop displaying "next" button

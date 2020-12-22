@@ -3,21 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CHRIS FARLEY TRIVIA</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Open+Sans:wght@600&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap" rel="stylesheet">
   </head>
+  <div>
   <body>
-    <header>
-      <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
-    </header>
     <main>
-      <img src="ChrisBackground.jpg" alt="Chris Farley" style="width: 100%" />
+    <aside>
+      <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
+    </aside>
+  </div>
       <div class="triviaBox">
         <div id="questionBox" class="question">Question</div>
         <div class="choices">
@@ -27,23 +24,12 @@
             <li id="opt3" onclick="button(this)"></li>
             <li id="opt4" onclick="button(this)"></li>
           </ul>
-        </div>
-        
-        <!-- <div class="choices">
-          <ul id="ul">
-            <li><button id="a" type="button" onclick="button(this)"></button></li>
-            <li><button id="b" type="button" onclick="button(this)"></button></li>
-            <li><button id="c" type="button" onclick="button(this)"></button></li>
-            <li><button id="d" type="button" onclick="button(this)"></button></li>
-          </ul>
-        </div> -->
-
-       
+        </div>    
         <div class="score">
           <div class="next">
             <button id="nextBut" type="button" onclick="next()">Next</button>
           </div>
-          <div class="scoreCounter">SCORE: <span id="pointsAmt">0</span></div>
+          <div id= "scoreText" class="scoreCounter">SCORE:<span id="pointsAmt">0</span></div>
         </div>
       </div>
     </main>
