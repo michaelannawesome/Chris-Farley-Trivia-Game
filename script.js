@@ -1,15 +1,15 @@
 //grabbing all elements
 
-let ul = document.getElementById('ul');
-let forward = document.getElementById('nextBut');
-let quesBox = document.getElementById('questionBox');
-let a = document.getElementById('a');
-let b = document.getElementById('b');
-let c = document.getElementById('c');
-let d = document.getElementById('d');
+const ul = document.getElementById('ul');
+const forward = document.getElementById('nextBut');
+const quesBox = document.getElementById('questionBox');
+const opt1 = document.getElementById('opt1');
+const opt2 = document.getElementById('opt2');
+const opt3 = document.getElementById('opt3');
+const opt4 = document.getElementById('opt4');
 
 //Questions Array by turinging into an Object
-let arr = {
+var arr = {
         questions:[
             {
                 qts:"Finish this quote: “Brothers don’t shake hands. Brothers _____",
@@ -64,19 +64,20 @@ let arr = {
         ],
    
   //starting the index at 0      
-  index= 0,
+  index: 0,
 
   // on 'load', start this function
-    start: () =>{
+    start: function (){
     //if the it is not the last question load the following:
     if(this.index<=this.questions.length-1) {
       //Grab the box that holds questions and display the question w/options
-      quesBox.innerHTML = this.index +1 + ". " + this.questions[this.index].qts
+      // quesBox.innerHTML = this.index +1 + ". " + this.questions[this.index].qts;
+      quesBox.innerHTML = this.index+1+ ". " + this.questions[this.index].qts;
       //Replace inside the HTML the choices that go with the given question.
-      a.innerHTML= this.questions[this.index].choices[0];
-      b.innerHTML= this.questions[this.index].choices[1];
-      c.innerHTML= this.questions[this.index].choices[2];
-      d.innerHTML= this.questions[this.index].choices[3];
+      opt1.innerHTML= this.questions[this.index].choices[0];
+      opt2.innerHTML= this.questions[this.index].choices[1];
+      opt3.innerHTML= this.questions[this.index].choices[2];
+      opt4.innerHTML= this.questions[this.index].choices[3];
     //when all questions have run, display this:
     } else {
       quesBox.innerHTML="Your brain has a shell on it!"
@@ -88,47 +89,47 @@ let arr = {
   },
 
   //the function for the next button
-  next: ()=> {
+  next: function () {
     //take the current question and move one forward
     this.index++;
     //then run the start function again
     this.start();
   },
-
-  //function for checking if the answer is right or wrong
-  //use the element as parameter
-  validate: (ele)=>  {
+  
+  // function for checking if the answer is right or wrong
+  // use the element as parameter
+  validate: function (element)  {
     //
-    let id= ele.id.split(' ');
+    var id= element.id.split('');
     //grabs a question as long as there is one left and checks answer
     if(id[id.length-1]==this.questions[this.index].answer){
       //increase the score by 1 if it's correct
       this.score++;
       //applies classname of "correct" so it will change color in css
-      ele.className="correct";
+      element.className="correct";
       //run the points function after checking the answer
       this.points();
-
+      console.log('correct working')
     }else {
       //applies classname so it will change color in CSS
-      ele.className="wrong";
+      element.className="wrong";
+      console.log('wrong')
     }
   },
 
   //function to not allow multiple answers or to change answers
-  stopClick: () => {
+  stopClick: function ()  {
     for (let i=0; i<ul.children.length; i++){
       //looks through all children of the list item and prevents the click
         ul.children[i].style.pointerEvents="none";
-        ul.children[i].className=''
     }
   },
 //function that does the opposite of above
-  allowClick: ()=> {
+  allowClick: function () {
     for(let i=0; i<ul.children.length; i++){
       //allows click if nothing has been selected.
       ul.children[i].style.pointerEvents="auto";
-      ul.children[i].className=''
+      ul.children[i].className='';
     }
 
   },
@@ -136,26 +137,32 @@ let arr = {
   //start score at 0
   score:0,
   //function that inserts the score inside the HTML
-  points:()=> {
-    pointsAmt.innerHTML=this.score
+  points: function (){
+    pointsAmt.innerHTML=this.score;
+
+    console.log('line 141', this.score)
+    console.log('line 142', pointsAmt)
   },
+
+
 
 }
 //When the window opens run the game and diplay the questions
-window.start= arr.start()
+window.start= arr.start();
 
 
-//this function calls the 2 aove functions to run upon click
-function button(ele){
-  arr.validate()
+//this function calls the 2 above functions to run upon click
+function button(element){
+  arr.validate(element);
   arr.stopClick();
+  console.log('answer button working')
 }
   
 //function that allows the next button to run the function that moves to questions forward
 function next (){
   arr.next();
   arr.allowClick();
-
+console.log('next button working')
 }
 
       
