@@ -18,7 +18,7 @@ Test your knowledge and re-live the magic that is Farley! This game features som
 
 ![FarleyGame](farleyGame.png)
 
-![chrisgif](https://media.giphy.com/media/lcZaVdfWryQU/giphy.gif)
+![aweFarleyGif](https://media.giphy.com/media/jPJz9s6VAqLLi/giphy.gif)
 
 ### Technologies Used:
 - HTML
@@ -56,7 +56,7 @@ As far as things that didn't quite make it to the final project there were just 
 It was my hope that I made you laugh and forget a worry for a moment. :bee: :bee: :bee: :heart:
 
 
-![ChrisgifAwe](https://media.giphy.com/media/Jk4Sucdz1oGd2/giphy.gif)
+![ChrisgifAwe](https://media.giphy.com/media/jPJz9s6VAqLLi/giphy.gif)
 
 
 
@@ -80,3 +80,4 @@ It was my hope that I made you laugh and forget a worry for a moment. :bee: :bee
 - https://en.wikipedia.org/wiki/Chris_Farley
 - https://apkpure.com/chris-farley-soundboard/net.toothpickfactory.chrisfarleysoundboard
 
+![gif](https://media.giphy.com/media/gNhdW22seEJzO/giphy.gif)
