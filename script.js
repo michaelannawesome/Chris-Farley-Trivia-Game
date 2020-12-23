@@ -1,176 +1,190 @@
+//grabbing all elements
 
+const ul = document.getElementById("ul");
+const forward = document.getElementById("nextBut");
+const quesBox = document.getElementById("questionBox");
+const opt1 = document.getElementById("opt1");
+const opt2 = document.getElementById("opt2");
+const opt3 = document.getElementById("opt3");
+const opt4 = document.getElementById("opt4");
 
-const resetButton = document.querySelector("#reset");
-const startButton = document.querySelector("#beginBut");
-const triviaBox = document.querySelector(".questionBox");
+//Questions Array by turinging into an Object
+var arr = {
+  questions: [
+    {
+      qts: "Finish this quote: “Brothers don’t shake hands. Brothers _____",
+      choices: [
+        "gotta dance.",
+        "gotta kiss.",
+        "gotta hug.",
+        "gotta take DNA tests.",
+      ],
+      answer: 3,
+    },
+    {
+      qts: "How many movies did Chris Farley make with David Spade?",
+      choices: ["One", "Two", "Four", "Five"],
+      answer: 2,
+    },
+    {
+      qts: "Chris Farley had a cameo in all of these movies EXCEPT:",
+      choices: ["Austin Powers", "Wayne’s World", "Billy Madison", "Coneheads"],
+      answer: 1,
+    },
+    {
+      qts:
+        "Chris Farley’s famous Bear’s fan character, Bill Swerski, has had how many heart attacks?",
+      choices: [
+        "Six",
+        "Too many to count",
+        "A baker’s dozen",
+        "It’s not a heart attack, just a minor blockage",
+      ],
+      answer: 3,
+    },
+    {
+      qts: "Finish this quote: I am 35 years old, thrice divorced, and_______",
+      choices: [
+        "I sell sandwiches to tourists.",
+        "I live in a van down by the river!",
+        "lay off, I’m starving!",
+        "my diet starts Monday!",
+      ],
+      answer: 2,
+    },
+    {
+      qts: "Who did all of Chris Farley’s stunts?",
+      choices: [
+        "Himself",
+        "David Spade",
+        "His look-a-like brother, Kevin Farley",
+        "Kansas City Chiefs' quarterback Joe Montana",
+      ],
+      answer: 1,
+    },
+    {
+      qts:
+        "What rock band wrote the song 'Purple Stain' with the lyric 'Farley is an angel and I can prove this', as a tribute?",
+      choices: ["Red Hot Chili Peppers", "Blink 182", "Bush", "Sublime"],
+      answer: 1,
+    },
+    {
+      qts:
+        "What tv show based on a popular book series was shelved permanently as the author only wanted Chris to play the lead?",
+      choices: ["Goosebumps", "Wayside Stories", "Holes", "Captain Underpants"],
+      answer: 4,
+    },
+    {
+      qts: "What profession did Chris claim when approaching women?",
+      choices: [
+        "Hypnotherapist",
+        "Brake pad salesman",
+        "Dentist",
+        "Aerobics Instructor",
+      ],
+      answer: 4,
+    },
+    {
+      qts: "What was Chris Farley’s dream bio pic role?",
+      choices: [
+        "John Belushi",
+        "Newt Gingrich",
+        "Roscoe 'Fatty' Arbuckle",
+        "Oliver Hardy (Laurel & Hardy)",
+      ],
+      answer: 3,
+    },
+  ],
 
-const ansA = document.getElementById('#choiceA');
-const ansB = document.getElementById('#choiceB');
-const ansC = document.getElementById('#choiceC');
-const ansD = document.getElementById('#choiceD');
+  //starting the index at 0
+  index: 0,
 
-startButton.addEventListener("click", beginGame)
-function beginGame(){
-  startButton.style.display ='none';
-  getQuest();
-  triviaBox.style.display= "block";
+  // on 'load', start this function
+  start: function () {
+    //if the it is not the last question load the following:
+    if (this.index <= this.questions.length - 1) {
+      //Grab the box that holds questions and display the question w/options
+      // quesBox.innerHTML = this.index +1 + ". " + this.questions[this.index].qts;
+      quesBox.innerHTML =
+        this.index + 1 + ". " + this.questions[this.index].qts;
+      //Replace inside the HTML the choices that go with the given question.
+      opt1.innerHTML = this.questions[this.index].choices[0];
+      opt2.innerHTML = this.questions[this.index].choices[1];
+      opt3.innerHTML = this.questions[this.index].choices[2];
+      opt4.innerHTML = this.questions[this.index].choices[3];
+      //when all questions have run, display this:
+    } else {
+      quesBox.innerHTML =
+        "Remember when you played that game? That was awesome!";
+      //stop displaying the questions and options
+      ul.style.display = "none";
+      //stop displaying "next" button
+      forward.style.display = "none";
+    }
+  },
+
+  //the function for the next button
+  next: function () {
+    //take the current question and move one forward
+    this.index++;
+    //then run the start function again
+    this.start();
+  },
+
+  // function for checking if the answer is right or wrong
+  // use the element as parameter
+  validate: function (element) {
+    //
+    var id = element.id.split("");
+    //grabs a question as long as there is one left and checks answer
+    if (id[id.length - 1] == this.questions[this.index].answer) {
+      //increase the score by 1 if it's correct
+      this.score++;
+      //applies class name of "correct" so it will change color in css
+      element.className = "correct";
+      //run the points function after checking the answer
+      this.points();
+      //When this is complete run this next:
+    } else {
+      //applies classname so it will change color in CSS
+      element.className = "wrong";
+    }
+  },
+
+  //function to not allow multiple answers or to change answers
+  stopClick: function () {
+    for (let i = 0; i < ul.children.length; i++) {
+      //looks through all children of the list item and prevents the click
+      ul.children[i].style.pointerEvents = "none";
+    }
+  },
+  //function that does the opposite of above
+  allowClick: function () {
+    for (let i = 0; i < ul.children.length; i++) {
+      //allows click if nothing has been selected.
+      ul.children[i].style.pointerEvents = "auto";
+      ul.children[i].className = "";
+    }
+  },
+
+  //start score at 0
+  score: 0,
+  //function that inserts the score inside the HTML
+  points: function () {
+    pointsAmt.innerHTML = this.score;
+  },
+};
+//When the window opens run the game and diplay the questions
+window.start = arr.start();
+
+//this function calls the 2 above functions to run upon click
+function button(element) {
+  arr.validate(element);
+  arr.stopClick();
 }
 
-
-
-resetButton.addEventListener("click", function() {
-  alert("Okey Dokey!");
-});
-
-// startButton.addEventListener("click", startTrivia() {
-//   alert("game started!");
-// });
-
-
-
-let questions = [
-  { question: "Finish this quote: “Brothers don’t shake hands. Brothers _____",
-    choiceA: "gotta dance.",
-    choiceB: "gotta kiss.",
-    choiceC: "gotta hug.",
-    choiceD: "gotta take DNA tests.",
-    correct: "C"
-
-  },
-  { question: "How many movies did Chris Farley make with David Spade?",
-    choiceA: "One",
-    choiceB: "Two",
-    choiceC: "Four",
-    choiceD: "Five",
-    correct: "B"
-
-  },
-  { question: "Chris Farley had a cameo in all of these movies EXCEPT:",
-    choiceA: "Austin Powers",
-    choiceB: "Wayne's World",
-    choiceC: "Billy Madison",
-    choiceD: "Coneheads",
-    correct: "A"
-
-  },
-  { question: "Chris Farley’s famous Bear’s fan character, Bill Swerski, has had how many heart attacks?",
-    choiceA: "Six",
-    choiceB: "Too many to count",
-    choiceC: "A baker’s dozen",
-    choiceD: "It’s not a heart attack, just a minor blockage",
-    correct: "C"
-
-  },
-  { question: "Finish this quote: “I am 35 years old, thrice divorced, and_______",
-    choiceA: "I sell sandwiches to tourists.",
-    choiceB: "I live in a van down by the river!",
-    choiceC: "lay off, I’m starving!",
-    choiceD: "my diet starts Monday!",
-    correct: "B"
-
-  },
-  { question: "Who did all of Chris Farley’s stunts?",
-    choiceA: "Himself",
-    choiceB: "David Spade",
-    choiceC: "His look-a-like brother, Kevin Farley",
-    choiceD: "Kansas City Chiefs' quarterback Joe Montana",
-    correct: "A"
-
-  },
-  { question: "What rock band wrote the song \'Purple Stain\' with the lyric \'Farley is an angel and I can prove this\', as a tribute?",
-    choiceA: "Red Hot Chili Peppers",
-    choiceB: "Blink 182",
-    choiceC: "Bush",
-    choiceD: "Sublime",
-    correct: "A"
-
-  },
-  { question: "What tv show based on a popular book series was shelved permanently as the author only wanted Chris to play the lead?",
-    choiceA: "Goosebumps",
-    choiceB: "Wayside Stories",
-    choiceC: "Holes",
-    choiceD: "Captain Underpants",
-    correct: "D"
-
-  },
-  { question: "What profession did Chris claim when approaching women?",
-    choiceA: "Hypnotherapist",
-    choiceB: "Brake pad salesman",
-    choiceC: "Dentist",
-    choiceD: "Aerobics Instructor",
-    correct: "D"
-
-  },
-  { question: "What was Chris Farley’s dream bio pic role?",
-    choiceA: "John Belushi",
-    choiceB: "Newt Gingrich",
-    choiceC: "Roscoe 'Fatty' Arbuckle",
-    choiceD: "Oliver Hardy (Laurel & Hardy)",
-    correct: "C"
-
-  },
-];
-
-
-let lastTrivia = questions.length-1;
-let currentQuest = 0;
-
-function getQuest (){
-  let q = questions[currentQuest];
-  quest.innerHTML = "<h3>" + q.questions + "</h3>";
-  choiceA.innerHTML = q.choiceA;
-  choiceB.innerHTML = q.choiceB;
-  choiceC.innerHTML = q.choiceC;
-  choiceD.innerHTML = q.choiceD;
+//function that allows the next button to run the function that moves to questions forward
+function next() {
+  arr.next();
+  arr.allowClick();
 }
-getQuest() 
-currentQuest++
- getQuest();
-
- function validateAns (answer) {
-   if (questions[currentQuest].correct===answer){
-     score++;
-     answerRight();
-   }else {
-     answerWrong();
-   }
-  //  if(currentQuest < lastTrivia) {
-  //    count = 0;
-     currentQuest++;
-   }
-   }
-
-   }
- }
-// let num = questions.length -1
-// console.log(num)
-
-// const questionBox = document.querySelector("#questionBox")
-
-// // insert innerHTML
-// questionBox.innerHTML = `Question: ${questions[num].question}`
-    
-// const choiceA = document.querySelector('#choiceA');
-// choiceA.innerHTML = `A. ${questions[num].choiceA}`
-
-// const choiceB = document.querySelector('#choiceB');
-// choiceB.innerHTML = `B. ${questions[num].choiceB}`
-
-// const choiceC = document.querySelector('#choiceC');
-// choiceC.innerHTML = `C. ${questions[num].choiceC}`
-
-// const choiceD = document.querySelector('#choiceD');
-// choiceD.innerHTML = `D. ${questions[num].choiceD}`
-
-
-// function startTrivia () {
-
-// }
-
-// function nextQuestion() {
-
-// }
-
-// function answer (){
-  
-// }
