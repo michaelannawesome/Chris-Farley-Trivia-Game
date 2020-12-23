@@ -56,6 +56,27 @@ As far as things that didn't quite make it to the final project there were just 
 It was my hope that I made you laugh and forget a worry for a moment. :bee: :bee: :bee: :heart:
 
 
-![ChrisgifAwe](https://media.giphy.com/media/jPJz9s6VAqLLi/giphy.gif)
+![ChrisgifAwe](https://media.giphy.com/media/Jk4Sucdz1oGd2/giphy.gif)
 
+
+
+#### Resources
+
+- https://simplestepscode.com/javascript-quiz-tutorial/
+- https://www.sitepoint.com/simple-javascript-quiz/
+- https://www.youtube.com/watch?v=riDzcEQbX6k
+- https://developer.mozilla.org/en-US/
+- https://www.youtube.com/watch?v=49pYIMygIcU
+- https://www.w3schools.com/
+- https://www.youtube.com/watch?v=Pi3Qd_fVaD0
+- https://www.youtube.com/watch?v=rFWbAj40JrQ
+- https://www.youtube.com/watch?v=2Bpjluefkh8
+- https://www.youtube.com/watch?v=f4fB9Xg2JEY
+- https://webdevtrick.com/create-javascript-quiz-program/
+
+##### Photos
+
+- https://www.thebozho.com/the-ringer-chris-farley-tommy-boy-25-years/
+- https://en.wikipedia.org/wiki/Chris_Farley
+- https://apkpure.com/chris-farley-soundboard/net.toothpickfactory.chrisfarleysoundboard
 
