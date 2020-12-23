@@ -5,36 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHRIS FARLEY TRIVIA</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <div>
   <body>
-    <main>
-    <aside>
-      <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
-    </aside>
-  </div>
-      <div class="triviaBox custom">
-        <div id="questionBox" class="question">Question</div>
-        <div class="choices">
-          <ul id="ul">
-            <li id="opt1" class="button glow-button" onclick="button(this)"></li>
-            <li id="opt2" class="button glow-button" onclick="button(this)"></li>
-            <li id="opt3" class="button glow-button" onclick="button(this)"></li>
-            <li id="opt4" class="button glow-button" onclick="button(this)"></li>
-          </ul>
-        </div>    
-        <div class="score">
-          <div class="next">
-            <button id="nextBut" type="button" onclick="next()">Next</button>
-          </div>
-          <div id= "scoreText" class="scoreCounter">SCORE:<span id="pointsAmt">0</span></div>
+    <div>
+      <aside>
+        <h1 id="banner">CHRIS FARLEY TRIVIA</h1>
+      </aside>
+    </div>
+    <div class="triviaBox custom">
+      <div id="questionBox" class="question">Question</div>
+      <div class="choices">
+        <ul id="ul">
+          <li id="opt1" class="button glow-button" onclick="button(this)"></li>
+          <li id="opt2" class="button glow-button" onclick="button(this)"></li>
+          <li id="opt3" class="button glow-button" onclick="button(this)"></li>
+          <li id="opt4" class="button glow-button" onclick="button(this)"></li>
+        </ul>
+      </div>
+      <div class="score">
+        <div class="next">
+          <button id="nextBut" type="button" onclick="next()">Next</button>
+        </div>
+        <div id="scoreText" class="scoreCounter">
+          SCORE:<span id="pointsAmt">0</span>
         </div>
       </div>
-    </main>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
-
-
