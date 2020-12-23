@@ -188,4 +188,3 @@ function next() {
   arr.next();
   arr.allowClick();
 }
-
