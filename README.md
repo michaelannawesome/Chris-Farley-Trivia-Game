@@ -18,7 +18,7 @@ Test your knowledge and re-live the magic that is Farley! This game features som
 
 ![FarleyGame](farleyGame.png)
 
-![aweFarleyGif](https://media.giphy.com/media/jPJz9s6VAqLLi/giphy.gif)
+![aweFarleyGif](https://media.giphy.com/media/lcZaVdfWryQU/giphy.gif)
 
 ### Technologies Used:
 - HTML
@@ -38,6 +38,8 @@ Test your knowledge and re-live the magic that is Farley! This game features som
 
 - As a user that might not know a lot about Chris Farley, I still want to be able to play and tally my score.
 
+![paul](https://media.giphy.com/media/e197ulw0sJzDG/giphy.gif)
+
 ## Early Iteration
 
 ![firstVersion](earlyChris.png)
@@ -56,7 +58,7 @@ As far as things that didn't quite make it to the final project there were just 
 It was my hope that I made you laugh and forget a worry for a moment. :bee: :bee: :bee: :heart:
 
 
-![ChrisgifAwe](https://media.giphy.com/media/jPJz9s6VAqLLi/giphy.gif)
+![ChrisgifAwe](https://media.giphy.com/media/d6OnGFP15hwQ0/giphy.gif)
 
 
 
