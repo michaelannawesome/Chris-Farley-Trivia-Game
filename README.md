@@ -1,9 +1,6 @@
 # Chris-Farley-Trivia-Game
 A fun trivia game that brings back 90's comedy!
 
-![Simpsons gif](https://media.giphy.com/media/SXxMElmLattqToSw4I/giphy.gif)
-
-![Elf gif](https://media.giphy.com/media/l2YWluoNgk342F3k4/giphy.gif)
 
 ## Are you a Chris Farley fan?
 
